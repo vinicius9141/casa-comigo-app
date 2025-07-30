@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import primeirMensagem from '../assets/images/primeira-msg.jpeg'
 
 const History = () => {
   // Data inicial fixa (exemplo)
@@ -37,6 +38,11 @@ const History = () => {
         {timeElapsed.minutes} <span style={{fontWeight: '400'}}>minutos</span> e{' '}
         {timeElapsed.seconds} <span style={{fontWeight: '400'}}>segundos</span>
       </p>
+      <div>
+        A primeira mensagem foi em 03/05
+        <img src={primeirMensagem} alt=" Primeira mensagem" style={{ marginTop: 20, width: '100%', borderRadius: 8 }}/>
+      </div>
+
     </div>
   );
 };
