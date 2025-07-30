@@ -6,7 +6,7 @@ const SuccessModal = ({ onFinal }) => {
       <div style={styles.modal}>
         <h2 style={styles.title}>🎉 Parabéns!</h2>
         <p style={styles.message}>Você respondeu todas as perguntas corretamente.</p>
-        <button onClick={onFinal} style={styles.button}>Recomeçar</button>
+        <button onClick={onFinal} style={styles.button}>Finalizar</button>
       </div>
     </div>
   );

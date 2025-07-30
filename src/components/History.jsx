@@ -48,7 +48,7 @@ const History = () => {
     padding: 20,
     borderRadius: 10,
     backgroundColor: '#282c34',
-    color: '#61dafb',
+    color: '#ffffffff',
     boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     textAlign: 'center',
