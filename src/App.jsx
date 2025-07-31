@@ -6,12 +6,12 @@ import History from './components/History';
 const questions = [
   {
     question: 'Qual seu nome?',
-    answers: ['Ingrid', 'Amor'], // Agora aceita ambas as respostas
+    answers: ['Ingrid', 'Amor'],
     tips: 'Letras maiúsculas importam.'
   },
   {
     question: 'Qual a soma do dia em que eu te pedi em namoro?',
-    answers: ['3', 'três'], // Aceita número ou por extenso
+    answers: ['3', 'três'],
     tips: 'Maior que 2 e menor que 4'
   },
   {
@@ -21,7 +21,7 @@ const questions = [
   },
   {
     question: 'Qual o nome do morto que conheceu antes de mim?',
-    answers: ['Tiriri', 'tiriri'], // Aceita maiúscula ou minúscula
+    answers: ['Tiriri', 'tiriri'],
     tips: 'Tá morto'
   },
   {
@@ -35,14 +35,14 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [userAnswers, setUserAnswers] = useState([]);
+  const [quizCompleted, setQuizCompleted] = useState(false); // ✅ Adicionado
 
   const handleAnswer = (userAnswer) => {
     const currentQ = questions[currentQuestion];
-    
-    // Normaliza a resposta do usuário e as respostas válidas para comparação
+
     const normalizedUserAnswer = userAnswer.trim().toLowerCase();
     const normalizedAnswers = currentQ.answers.map(ans => ans.toString().toLowerCase());
-    
+
     const isCorrect = normalizedAnswers.includes(normalizedUserAnswer);
 
     setUserAnswers([...userAnswers, {
@@ -56,6 +56,7 @@ function App() {
         setCurrentQuestion(currentQuestion + 1);
       } else {
         setShowSuccessModal(true);
+        setQuizCompleted(true); // ✅ Marcado como concluído
       }
     } else {
       alert('Resposta incorreta. Tente novamente.');
@@ -64,32 +65,24 @@ function App() {
 
   const handleFinal = () => {
     setShowSuccessModal(false);
-  };
-
-  const restartQuiz = () => {
-    setCurrentQuestion(0);
-    setUserAnswers([]);
-    setShowSuccessModal(false);
+    // `quizCompleted` já está true, então o modal não volta
   };
 
   return (
     <div className="app">
       <History answers={userAnswers} />
-      
-      {!showSuccessModal && currentQuestion < questions.length ? (
+
+      {!quizCompleted && !showSuccessModal && (
         <QuestionModal
           questionData={questions[currentQuestion]}
           questionNumber={currentQuestion + 1}
           totalQuestions={questions.length}
           onAnswer={handleAnswer}
         />
-      ) : null}
-      
+      )}
+
       {showSuccessModal && (
-        <SuccessModal 
-          onFinal={handleFinal}
-          onRestart={restartQuiz}
-        />
+        <SuccessModal onFinal={handleFinal} />
       )}
     </div>
   );
