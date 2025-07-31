@@ -6,14 +6,29 @@ import History from './components/History';
 
 const questions = [
   {
-    question: 'Qual a capital do Brasil?',
-    answer: 'vini',
-    tips: 'É uma cidade planejada no centro do país.'
+    question: 'Qual seu nome?',
+    answer: 'Ingrid',
+    tips: 'Letras maiusculas importam.'
   },
   {
-    question: '2 + 2 = ?',
-    answer: '4',
-    tips: 'É o dobro de 2.'
+    question: 'Qual a soma do dia em que eu te pedi em namoro?',
+    answer: '3',
+    tips: 'Maior que 2 e  menor que 4'
+  },
+  {
+    question: 'Qual o tamanho que voce me ama?',
+    answer: 'Do tamanho da muralha da china',
+    tips: 'Não é a maior coisa do mundo'
+  },
+  {
+    question: 'Qual o apelido do morto que conheceu antes de mim?',
+    answer: 'Tiriri',
+    tips: 'Ta morto'
+  },
+   {
+    question: 'Quem voce conheceu antes de mim?',
+    answer: 'Sogra',
+    tips: 'A sua mae é minha...'
   },
 ];
 

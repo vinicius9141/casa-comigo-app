@@ -39,8 +39,26 @@ const History = () => {
         {timeElapsed.seconds} <span style={{fontWeight: '400'}}>segundos</span>
       </p>
       <div>
-        A primeira mensagem foi em 03/05
+        <span style={historyTitle}>A primeira mensagem foi em 03/05</span>
         <img src={primeirMensagem} alt=" Primeira mensagem" style={{ marginTop: 20, width: '100%', borderRadius: 8 }}/>
+
+        <div style={{ paddingTop: '4.45rem' , paddingBottom:'2rem' }}>
+           <span style={historyTitle}> Essa musica me lembra voce</span>
+           <iframe
+            title="Música que me lembra você"
+            src="https://open.spotify.com/embed/track/3tqLTlt2O0300Aakkr0PEO?utm_source=generator"
+            width="100%"
+            height="152"
+            frameBorder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            style={{ borderRadius: 12, paddingTop: '1.45rem' }}
+            />
+
+          <div>
+            
+          </div>
+        </div>
       </div>
 
     </div>
@@ -70,5 +88,13 @@ const History = () => {
     fontSize: '1.5rem',
     fontWeight: '600',
     letterSpacing: 1.2,
+  };
+
+  const historyTitle = {
+    fontSize: '1.35em',
+    fontWeight: '600',
+    letterSpacing: 1.2,
+    backgroundColor: '#4d8a36ff',
+    padding: '1px'
   };
 export default History;
