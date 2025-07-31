@@ -1,41 +1,58 @@
 import React, { useState } from 'react';
 
-const QuestionModal = ({ questionData, onAnswer }) => {
-  const [userAnswer, setUserAnswer] = useState('');
+const QuestionModal = ({ questionData, questionNumber, totalQuestions, onAnswer }) => {
+  const [userInput, setUserInput] = useState('');
   const [showTip, setShowTip] = useState(false);
 
-  const handleSubmit = () => {
-    const isCorrect = userAnswer.trim().toLowerCase() === questionData.answer.toLowerCase();
-    onAnswer(isCorrect);
-    setUserAnswer('');
-    setShowTip(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!userInput || userInput.trim() === '') {
+      alert('Por favor, digite sua resposta');
+      return;
+    }
+    
+    onAnswer(userInput);
+    setUserInput('');
   };
 
   return (
     <div style={styles.overlay}>
       <div style={styles.modal}>
+        <div style={styles.progress}>
+          Pergunta {questionNumber} de {totalQuestions}
+        </div>
+        
         <h2 style={styles.title}>{questionData.question}</h2>
 
         {showTip && (
-          <p style={styles.tip}><strong>Dica:</strong> {questionData.tips}</p>
+          <p style={styles.tip}>
+            <strong>Dica:</strong> {questionData.tips}
+          </p>
         )}
 
-        <input
-          type="text"
-          value={userAnswer}
-          onChange={(e) => setUserAnswer(e.target.value)}
-          placeholder="Digite sua resposta"
-          style={styles.input}
-        />
-
-        <div style={styles.buttonGroup}>
-          <button onClick={() => setShowTip(true)} style={styles.tipButton}>
-            Ver dica
-          </button>
-          <button onClick={handleSubmit} style={styles.submitButton}>
-            Enviar
-          </button>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
+            placeholder="Digite sua resposta"
+            style={styles.input}
+            required
+          />
+          <div style={styles.buttonGroup}>
+            <button 
+              type="button" 
+              onClick={() => setShowTip(!showTip)} 
+              style={styles.tipButton}
+            >
+              {showTip ? 'Ocultar Dica' : 'Mostrar Dica'}
+            </button>
+            <button type="submit" style={styles.submitButton}>
+              Enviar
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
@@ -43,9 +60,15 @@ const QuestionModal = ({ questionData, onAnswer }) => {
 
 const styles = {
   overlay: {
-    position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    display: 'flex', justifyContent: 'center', alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     zIndex: 999,
     padding: '1rem',
   },
@@ -58,6 +81,13 @@ const styles = {
     boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
     textAlign: 'center',
     position: 'relative',
+  },
+  progress: {
+    position: 'absolute',
+    top: '1rem',
+    right: '1rem',
+    fontSize: '0.9rem',
+    color: '#6b7280',
   },
   title: {
     fontSize: '1.5rem',
@@ -100,7 +130,7 @@ const styles = {
   },
   submitButton: {
     flex: 1,
-    backgroundColor: '#1eaf73ff',
+    backgroundColor: '#1eaf73',
     color: '#fff',
     border: 'none',
     borderRadius: '8px',
