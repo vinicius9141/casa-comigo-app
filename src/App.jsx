@@ -57,7 +57,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <History/>
       {!quizCompleted && !showSuccessModal && (
         <QuestionModal
