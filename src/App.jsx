@@ -21,7 +21,7 @@ const questions = [
     tips: 'Não é a maior coisa do mundo'
   },
   {
-    question: 'Qual o apelido do morto que conheceu antes de mim?',
+    question: 'Qual o nome do morto que conheceu antes de mim?',
     answer: 'Tiriri',
     tips: 'Ta morto'
   },

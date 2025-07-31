@@ -1,13 +1,23 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const SuccessModal = ({ onFinal }) => {
   return (
     <div style={styles.overlay}>
-      <div style={styles.modal}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        transition={{ duration: 0.4 }}
+        style={styles.modal}
+      >
         <h2 style={styles.title}>🎉 Parabéns!</h2>
         <p style={styles.message}>Você respondeu todas as perguntas corretamente.</p>
-        <button onClick={onFinal} style={styles.button}>Finalizar</button>
-      </div>
+
+        <button onClick={onFinal} style={styles.button}>Voltar para o início</button>
+
+        <p style={styles.signature}>Com amor, Vinicius ❤️</p>
+      </motion.div>
     </div>
   );
 };
@@ -48,6 +58,12 @@ const styles = {
     fontSize: '1rem',
     cursor: 'pointer',
     transition: 'background 0.2s',
+  },
+  signature: {
+    marginTop: '1.5rem',
+    fontStyle: 'italic',
+    fontSize: '0.95rem',
+    color: '#4b5563',
   },
 };
 
