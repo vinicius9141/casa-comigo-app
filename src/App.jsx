@@ -18,7 +18,7 @@ const questions = [
   {
     question: 'Qual o tamanho que voce me ama?',
     answer: 'Do tamanho da muralha da china',
-    tips: 'Não é a maior coisa do mundo'
+    tips: 'Não é a maior coisa do mundo e isso faz parte: "Do tamanho da..."'
   },
   {
     question: 'Qual o nome do morto que conheceu antes de mim?',
