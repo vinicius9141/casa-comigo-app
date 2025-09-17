@@ -43,6 +43,13 @@ const History = () => {
       Um mês que parece pouco diante de tudo o que já vivemos, mas que carrega a intensidade de uma vida inteira.
       Você já é meu lugar favorito, meu porto seguro e a melhor parte dos meus dias. ✨`,
     },
+    {
+      id: 3,
+      text: `Chegamos ao nosso terceiro mês de namoro, e como eu já te disse inúmeras vezes: eu te amo um tantão. 
+      É um tantão porque não existe palavra que consiga descrever a imensidão desse amor. 
+      E este mês foi ainda mais especial — você pegou o buquê da noiva, um sinal do destino que confirma aquilo que meu coração já sabe: 
+      que ainda vamos nos casar e viver uma vida inteira lado a lado. 💍❤️`
+    }
   ];
 
   return (
