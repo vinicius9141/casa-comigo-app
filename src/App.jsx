@@ -19,6 +19,11 @@ const questions = [
     answers: ['Do tamanho da muralha da china', 'muralha da china'],
     tips: 'Não é a maior coisa do mundo e isso faz parte: "Do tamanho da..."'
   },
+   {
+    question: 'De onde não da pra ver a muralha da china?',
+    answers: ['da lua'],
+    tips: 'o Homem esteve lá"'
+  },
   {
     question: 'Qual o nome do morto que conheceu antes de mim?',
     answers: ['Tiriri', 'tiriri'],
