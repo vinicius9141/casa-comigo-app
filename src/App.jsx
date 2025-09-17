@@ -21,7 +21,7 @@ const questions = [
   },
    {
     question: 'De onde não da pra ver a muralha da china?',
-    answers: ['da lua'],
+    answers: ['da lua', 'do espaço' , 'lua' , 'espaço'],
     tips: 'o Homem esteve lá"'
   },
   {
