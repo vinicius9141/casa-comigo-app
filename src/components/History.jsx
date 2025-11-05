@@ -49,6 +49,14 @@ const History = () => {
       É um tantão porque não existe palavra que consiga descrever a imensidão desse amor. 
       E este mês foi ainda mais especial — você pegou o buquê da noiva, um sinal do destino que confirma aquilo que meu coração já sabe: 
       que ainda vamos nos casar e viver uma vida inteira lado a lado. 💍❤️`
+    },
+    {
+      id: 4,
+      text: `No nosso quarto mês de namoro, a vida decidiu nos presentear de um jeito que eu nunca vou esquecer. 
+  Foi o mês em que te pedi em casamento — o passo mais bonito que já dei — e o mês em que descobri que seria pai. 
+  Nunca senti uma felicidade tão profunda, tão cheia de sentido. 
+  Era como se, de repente, todas as peças do mundo se encaixassem e tudo fizesse sentido, porque eu tenho você, 
+  e agora, temos o nosso pedacinho de amor crescendo dentro de nós. 👶💍❤️`
     }
   ];
 
