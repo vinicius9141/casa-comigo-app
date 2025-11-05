@@ -53,10 +53,10 @@ const History = () => {
     {
       id: 4,
       text: `No nosso quarto mês de namoro, a vida decidiu nos presentear de um jeito que eu nunca vou esquecer. 
-  Foi o mês em que te pedi em casamento — o passo mais bonito que já dei — e o mês em que descobri que seria pai. 
-  Nunca senti uma felicidade tão profunda, tão cheia de sentido. 
-  Era como se, de repente, todas as peças do mundo se encaixassem e tudo fizesse sentido, porque eu tenho você, 
-  e agora, temos o nosso pedacinho de amor crescendo dentro de nós. 👶💍❤️`
+      Foi o mês em que te pedi em casamento — o passo mais bonito que já dei — e o mês em que descobri que seria pai. 
+      Nunca senti uma felicidade tão profunda, tão cheia de sentido. 
+      Era como se, de repente, todas as peças do mundo se encaixassem e tudo fizesse sentido, porque eu tenho você, 
+      e agora, temos o nosso pedacinho de amor crescendo dentro de nós. 👶💍❤️`
     }
   ];
 
